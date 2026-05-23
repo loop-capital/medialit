@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ['...', 'ffmpeg', 'libwebp']
+
+[phases.build]
+cmds = ['pnpm install --frozen-lockfile', 'pnpm --filter=@medialit/thumbnail build', 'pnpm --filter=@medialit/images build', 'pnpm --filter=@medialit/utils build', 'pnpm --filter=@medialit/models build', 'pnpm --filter=@medialit/api build']
+
+[start]
+cmd = 'pnpm --filter=@medialit/api start'
